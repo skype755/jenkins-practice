@@ -2,6 +2,7 @@ pipeline {
     agent { label "agent-1" }
     environment {
         project = "expense"
+        DEPLOY_TO = "QA"
     }
     options {
                 // Timeout counter starts BEFORE agent is allocated
@@ -54,7 +55,9 @@ pipeline {
             //         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
             //     }
             // }
-            when { main }
+            when { 
+                environment name: 'DEPLOY_TO', value: 'production'
+                }
             steps {
                 script{
                 sh """
