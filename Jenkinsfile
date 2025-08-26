@@ -78,6 +78,7 @@ pipeline {
                              """
                             }
                      }
+            }
                 
         }
                 stage('stage-2') {
@@ -94,3 +95,4 @@ pipeline {
                  
         }
 }
+
