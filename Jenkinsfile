@@ -67,32 +67,36 @@ pipeline {
             }
         }
     }
+}
         stage('Parallel Stages') {
             parallel {
-                stage('stage-1') {
-
+                stage('STAGE-1') {
+                    
                     steps {
                         script{
                             sh """
-                                 echo "hello, this is from stage-1"
-                             """
-                            }
-                     }
-            }
-                
-        }
-                stage('stage-2') {
-                   
-                        steps{
-                            script{
-                                 sh """
-                                    echo "hello, this is from stage-2"
-                                 """
-                            }
+                                echo "Hello, this is STAGE-1"
+                                sleep 15
+                            """
                         }
+                    }
                 }
-                
-                 
+                stage('STAGE-2') {
+                    
+                    steps {
+                        script{
+                            sh """
+                                echo "Hello, this is STAGE-2"
+                                sleep 15
+                            """
+                        }
+                    }
+                }
+            }
         }
-}
+    
+
+
+    
+
 
