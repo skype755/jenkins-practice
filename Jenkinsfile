@@ -76,7 +76,7 @@ pipeline {
                         script{
                             sh """
                                 echo "Hello, this is STAGE-1"
-                                sleep 15
+                                sleep 10
                             """
                         }
                     }
@@ -87,7 +87,7 @@ pipeline {
                         script{
                             sh """
                                 echo "Hello, this is STAGE-2"
-                                sleep 15
+                                sleep 10
                             """
                         }
                     }
