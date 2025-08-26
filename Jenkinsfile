@@ -2,7 +2,7 @@ pipeline {
     agent { label "agent-1" }
     environment {
         project = "expense"
-        DEPLOY_TO = "QA"
+        DEPLOY_TO = "production"
     }
     options {
                 // Timeout counter starts BEFORE agent is allocated
